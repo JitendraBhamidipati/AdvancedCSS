@@ -1,0 +1,81 @@
+.form{
+    &_input{
+        padding: 1.5rem 2rem;
+        font-size: 1.5rem;
+        border-radius: 2px;
+        background-color: rgba($color-white, .5);
+        border:none;
+        color: inherit;
+        font-family: inherit; 
+        border-bottom: 3px solid transparent;
+        display: block;
+        width: 100%;
+        transition: all .3s;
+        &:focus{
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-black,.1);
+            border-bottom: 3px solid $color-primary;
+            &:invalid{
+                border-bottom: 3px solid orangered;
+            }
+        }
+        &::-webkit-input-placeholder{
+            color: #999;
+        }
+    }
+    &_input:placeholder-shown + &_label{
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+    &_label{
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin: .7rem 0 0 2rem;
+        display: block;
+        transition: all .3s;
+    }
+    &_group:not(:last-child){
+        margin-bottom: 2rem;
+    }
+    &_radio-group{
+        display: inline-block;
+        width: 49%;
+    }
+    &_radio-input{
+        display: none;
+    }
+    &_radio-label{
+        font-size: 1.6rem;
+        cursor: pointer;
+        position: relative;
+        padding-left: 4.5rem;
+    }
+    &_radio-button{
+        height: 3rem;
+        width: 3rem;
+        border: 5px solid $color-primary;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: -.3rem;
+        &::after{
+            content: "";
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            background-color: $color-primary;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            opacity: 0;
+            transition: opacity .2s;
+        }
+    }
+    &_radio-input:checked ~ &_radio-label &_radio-button::after{
+        opacity: 1;
+    }
+}

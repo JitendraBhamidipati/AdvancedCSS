@@ -1,0 +1,144 @@
+.card1{
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 50rem;
+    margin-bottom: 3rem;
+    &__side{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50rem;
+        transition: all 1s ease-in-out;
+        backface-visibility: hidden;
+        box-shadow: 0 1rem 4rem $color-black;
+        border-radius: 3px;
+        overflow: hidden;
+        &--front{
+            background-color: $color-white;
+        }
+        &--back{
+            background-image: linear-gradient(to right,rgba($color-red-light,0.8),rgba($color-red-dark,0.8));
+            transform: rotateY(180deg);
+        }
+    }
+    &:hover &__side--front{
+        transform: rotateY(-180deg);
+    }
+    &:hover &__side--back{
+        transform: rotateY(0);
+    }
+    &__picture{
+        background-size: cover;
+        height: 23rem;
+        clip-path: polygon(0 0, 100% 0,100% 85%,0 100%);
+        -webkit-background-clip: polygon(0 0, 100% 0,100% 75%,0 100%);
+        &--1{
+            background-image: linear-gradient(to right bottom,rgba($color-red-light,0.2),rgba($color-red-dark,0.2)),url(../img/Nat-5.jpg); 
+            
+        }
+        &--2{
+            background-image: linear-gradient(to right bottom,rgba($color-red-light,0.2),rgba($color-red-dark,0.2)),url(../img/nat-6.jpg); 
+        }
+        &--3{
+            background-image: linear-gradient(to right bottom,rgba($color-red-light,0.2),rgba($color-red-dark,0.2)),url(../img/nat-7.jpg); 
+        }
+    }
+    &__heading{
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-white;
+        position: absolute;
+        top: 12rem; 
+        right: 2rem; 
+        width: 75%;
+    }
+    &__heading__span{
+        padding: 0 3rem;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+        &--1{
+            background-image: linear-gradient(to right bottom,rgba($color-red-light,0.85),rgba($color-red-dark,0.85));
+        }
+        &--2{
+            background-image: linear-gradient(to right bottom,rgba($color-red-light,0.85),rgba($color-red-dark,0.85));
+        }
+        &--3{
+            background-image: linear-gradient(to right bottom,rgba($color-red-light,0.85),rgba($color-red-dark,0.85));
+        }
+    }
+    &__details{
+        padding: 2rem 5rem;
+        ul{
+            list-style: none;
+            margin: 0 auto;
+            li{
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+                &:not(:last-child){
+                    border-bottom: 1px solid $color-light-grey2;
+                }
+            }
+        }
+    }
+    &__cta{
+        position: absolute;
+        top:50%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%,-50%);
+    }
+    &__price-box{
+        width: 90%;
+        color:$color-white;
+        margin-bottom: 8rem;
+    }
+    &__price-only{
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+    &__price-value{
+        font-size : 6rem;
+        font-weight : 300;
+    }
+
+    @media (max-width:991.98px){
+        height: auto;
+        border-radius: 3px;
+        background-color: $color-white;
+        box-shadow: 0 1rem 4rem $color-black;
+        &__details{
+            padding: 1rem 3rem;
+        }
+        &__side{
+            position: relative;
+            height: auto;
+            box-shadow: none;
+            &--back{
+                transform: rotateY(0deg);
+                clip-path: polygon(0 15%,100% 0,100% 100%,0 100%);
+            }
+        }
+        &:hover &__side--front{
+            transform: rotateY(0deg);
+        }
+        &__cta{
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+            width: 100%;
+            padding: 7rem 4rem 4rem 4rem;
+        }
+        &__price-box{
+            margin-bottom: 3rem;
+        }
+        &__price-value{
+            font-size : 4rem;
+        }
+    }
+}

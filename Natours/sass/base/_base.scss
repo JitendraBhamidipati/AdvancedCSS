@@ -1,0 +1,24 @@
+*,*::after,*::before{
+    margin: 0rem;
+    padding: 0rem;
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%; //
+    @include respond(tab-land){ //<1200px
+        font-size: 56.25%;
+    }
+    @include respond(tab-prot){ //<900px
+        font-size: 50%;
+    }
+    @include respond(big-desktop){ //>1200px
+        font-size: 75%;
+    }
+}
+body{
+    box-sizing: border-box;
+    padding: 3rem;
+    @include respond(tab-prot){ //<900px
+        padding: 0;
+    }
+}

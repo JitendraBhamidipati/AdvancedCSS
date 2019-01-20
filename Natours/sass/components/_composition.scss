@@ -1,0 +1,63 @@
+.composition{
+    position: relative;
+    &__photo{
+        width: 40%;
+        box-shadow: 0 1.5rem 4rem rgba($color-black,.4);
+        border-radius: 2px;
+        position: absolute;
+        outline-offset: 2rem;
+        @media (max-width:767.98px){
+            float: left;
+            position: relative;
+            width: 33.3333333%;
+            margin: 5rem 0;
+            box-shadow: 0 1.5rem 3rem rgba($color-black,.2);
+        }
+        &--p1{
+            left: 4rem;
+            top: -2rem; 
+            z-index: 5;
+            @media (max-width:992px){
+                top:3rem;
+                left:5rem;
+            } 
+        }
+        &--p2{
+            right: 15rem;
+            top: 2rem;
+            z-index: 5;
+            @media (max-width:992px){
+                top:5rem;
+                right:6rem;
+            }
+            @media (max-width:767.98px){
+                top:5rem;
+                right:0rem;
+                z-index: 10;
+            }          
+        }
+        &--p3{
+            left: 20%;
+            top: 10rem;
+            z-index: 5;
+            @media (max-width:992px){
+                top:10rem;
+                left:10rem;
+            }
+            @media (max-width:767.98px){
+                top: 3rem;
+                left: -5rem;
+            }    
+        }
+        &:hover{
+            transform: scale(1.05) translateY(-0.5rem);
+            box-shadow: 0 2.5rem 4rem rgba($color-black,.5);
+            z-index: 99990;
+            outline: 1.5rem solid $color-primary;
+        }
+        &:hover &__photo:not(:hover){
+            transform: scale(0.95);
+        }
+    }
+
+}

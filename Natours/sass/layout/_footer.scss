@@ -1,0 +1,62 @@
+.footer{
+    font-size: 1.4rem;
+    background-color: $color-grey-3;
+    color: $color-white;
+    padding: 10rem;
+    @include respond(tab-prot){
+        padding: 7rem 0;
+    }
+    &_icon{
+        margin-bottom: 8rem;
+        @include respond(tab-prot){
+            margin-bottom: 4rem;
+        }
+    }
+    &_navigation{
+        border: 1px solid $color-grey-3;
+        padding-top: 2rem;
+        display: inline-block; 
+        @include respond(tab-prot){
+            width: 100%;
+            text-align: center;
+        }
+    }
+    &_link{
+        &:link,&:visited{
+            color: $color-white;
+            transition: all .2s;
+            text-decoration: none;
+            display: inline-block;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+        &:hover,&:active{
+            box-shadow: 0 1rem 2rem rgba($color-black,.85);
+            color: $color-primary;
+            transform: rotate(15deg) scale(1.25);
+        }
+    }
+    &_list{
+        border-top: 3px solid $color-grey;
+        list-style: none;
+        display: inline-block;
+    }
+    &_item{
+        display: inline-block;
+        padding: 2rem 1rem;
+    }
+    &_copyright{
+        margin-left: 5rem;
+        padding: 2rem 1rem;
+        display: inline-block;
+        border-top: 3px solid $color-grey;
+        & a:hover{
+            text-decoration: none;
+        }
+        @include respond(tab-prot){
+            width: 100%;
+            float: none;
+            margin-left: 0;
+        }
+    }
+}
